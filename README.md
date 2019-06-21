@@ -6,9 +6,8 @@ Create your own bot, and send messages (alerts, info, etc) to your mobile
 device or desktop.
 
 ## Requirements
-- Linux environment
 - Python 3.x (compatible with 2.7)
-- modules: requests
+- Python module: requests
 - A valid and active Telegram Bot
 
 ### Installing
@@ -16,7 +15,7 @@ device or desktop.
 2) Import the class or copy the code
 3) Initiate the class:
 ```
-tbot = Messenger(bot_id='bot678009249:AAEvi26jWxM0r_yjHEYEBXGSbNe4ZcSRK-E', api_chat_id='62017281')
+tbot = Messenger(bot_id='bot678009249:AAEvi26jWxM0r_yjHEYEBXGSbNe4ZcSRK-E', chat_id='62017281')
 ```
 And send!
 ```

@@ -9,14 +9,14 @@ import requests
 
 
 class Messenger(object):
-    def __init__(self, bot_id="", api_chat_id=""):
+    def __init__(self, bot_id="", chat_id=""):
         if not bot_id:
             raise SystemExit('Missing `bot_id` during initiate')
-        if not api_chat_id:
-            raise SystemExit('Missing `api_chat_id` during initiate')
-        self.api_endpoint = 'https://api.telegram.org/{}/sendMessage'.format(self.bot_id)
-        self.bot_id = str(bot_id)
-        self.api_chat_id = str(api_chat_id)
+        if not chat_id:
+            raise SystemExit('Missing `chat_id` during initiate')
+        self.api_bot_id = str(bot_id)
+        self.api_chat_id = str(chat_id)
+        self.api_endpoint = 'https://api.telegram.org/{}/sendMessage'.format(self.api_bot_id)
 
     def send(self, msg=""):
         if msg:
@@ -30,5 +30,4 @@ class Messenger(object):
             requests.post(url=self.api_endpoint, data=post_data)
         except:
             raise SystemExit('Something went wrong or can not connect to API...')
-
 
